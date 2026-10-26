@@ -7,9 +7,12 @@ Runs the incident tracker and a PostgreSQL database as a two-service Compose sta
 - Docker Compose
 - A `.env` file in `week-4/` (copy `.env.example` and fill in real values)
 
+
 ## Run it
+Compose is stopped; this app now runs on Kubernetes (k3s).
 ```
-docker compose up -d --build
+kubectl apply -f .
+kubectl port-forward --address 0.0.0.0 service/web 8080:8080
 ```
 
 ## Verify
