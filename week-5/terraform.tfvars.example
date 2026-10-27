@@ -1,0 +1,4 @@
+postgres_user     = "postgres"
+postgres_password = "postgres"
+postgres_db       = "postgres"
+flask_secret_key  = "flask"
