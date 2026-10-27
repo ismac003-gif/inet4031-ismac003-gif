@@ -9,26 +9,28 @@
 - The Week 5 stack running on k3s
 - `gh` signed in with the `workflow` scope, to push workflow files
 
-## Install Prometheushelm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+## Install Prometheus
+```
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo update
-helm install prometheus prometheus-community/prometheus
---version 29.35.0
---namespace monitoring
---create-namespace
---values week-6/prometheus-values.yaml
-
+helm install prometheus prometheus-community/prometheus \
+  --version 29.35.0 \
+  --namespace monitoring \
+  --create-namespace \
+  --values week-6/prometheus-values.yaml
+```
 
 ## Ask it a question
-
+```
 kubectl port-forward --namespace monitoring service/prometheus-server 9090:80
-./week-6/pq.sh ‘up’
-
+./week-6/pq.sh 'up'
+```
 Run the port-forward in its own terminal and the script in another.
 
 ## Remove it
-
+```
 helm uninstall prometheus --namespace monitoring
-
+```
 
 ## Known limitation
 Prometheus keeps its data on temporary storage, so restarting its pod erases the history. It has no login, which is why the port-forward listens only on the VM's loopback address.
