@@ -1,0 +1,17 @@
+check,value,expected,pass
+row_count,11649,>= 10000,True
+first_created_at,2026-07-18 02:58:00,,True
+last_created_at,2026-11-14 21:21:59,,True
+days_covered,119,>= 90,True
+category_count,5,>= 4,True
+closed_rows,11353,,True
+open_or_in_progress_rows,296,,True
+closed_rows_missing_resolution,0,0,True
+duplicate_ids,0,0,True
+nulls_id,0,0,True
+nulls_title,0,0,True
+nulls_category,0,0,True
+nulls_status,0,0,True
+nulls_created_at,0,0,True
+nulls_resolved_at,296,open rows only,True
+nulls_resolution_hours,296,open rows only,True
